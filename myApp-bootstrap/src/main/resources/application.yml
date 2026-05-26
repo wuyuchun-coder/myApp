@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: myApp
+
+logging:
+  level:
+    root: INFO
+    com.myapp: DEBUG
