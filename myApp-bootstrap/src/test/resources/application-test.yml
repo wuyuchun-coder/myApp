@@ -1,9 +1,4 @@
-server:
-  port: 8080
-
 spring:
-  application:
-    name: myApp
   datasource:
     # 需先建立 SSH 隧道：ssh -L 3307:127.0.0.1:3306 root@111.228.11.168
     url: jdbc:mysql://127.0.0.1:3307/myApp?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
@@ -14,17 +9,15 @@ spring:
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
   global-config:
     db-config:
       table-underline: true
 
 myapp:
   jwt:
-    secret: ${JWT_SECRET:myApp-dev-secret-key-change-in-production-min-32chars}
+    secret: test-jwt-secret-key-for-integration-test-min-32
     expiration-ms: 86400000
 
 logging:
   level:
-    root: INFO
-    com.myapp: DEBUG
+    com.myapp: INFO

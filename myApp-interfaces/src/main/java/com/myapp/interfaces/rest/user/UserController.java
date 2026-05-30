@@ -30,7 +30,12 @@ public class UserController {
     @PostMapping
     public ResponseEntity<UserDTO> createUser(@Valid @RequestBody CreateUserRequest request) {
         UserDTO created = userApplicationService.createUser(
-                new CreateUserCommand(request.getUsername(), request.getEmail())
+                new CreateUserCommand(
+                        request.getUsername(),
+                        request.getEmail(),
+                        request.getPassword(),
+                        request.getNickname()
+                )
         );
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }

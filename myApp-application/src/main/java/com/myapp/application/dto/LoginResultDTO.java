@@ -5,15 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 用户数据传输对象。
+ * 登录结果 DTO。
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDTO {
+public class LoginResultDTO {
 
-    private String id;
-    private String username;
-    private String email;
-    private String nickname;
+    private String token;
+    private UserDTO user;
 }
